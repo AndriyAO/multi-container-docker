@@ -15,6 +15,7 @@ after_success:
   - docker build -t antoniuk02/multi-worker ./worker ./worker
   - docker build -t antoniuk02/multi-nginx ./nginx ./nginx
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$(docker login)"
   - docker push antoniuk02/multi-client
   - docker push antoniuk02/multi-server
   - docker push antoniuk02/multi-nginx
